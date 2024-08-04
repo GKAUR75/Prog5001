@@ -1,0 +1,48 @@
+#Pseudo Code for Algorithm 3
+Algorithm FilterStudentsBelowThreshold
+Input: threshold (int)
+Output: List of students with total marks less than the threshold
+
+BEGIN
+    Initialize an empty list 'filteredStudents'
+    FOR each student in studentsList
+        IF student.totalMarks < threshold THEN
+            Add student to 'filteredStudents'
+        END IF
+    END FOR
+    RETURN 'filteredStudents'
+END
+
+
+//pseudo Code for Algorithm 4
+Algorithm SortAndPrintTopStudents
+Input: studentsList
+Output: Top 5 students with highest and lowest total marks
+
+BEGIN
+    Initialize two empty lists 'topHighest' and 'topLowest'
+    
+    FOR i FROM 0 TO 4
+        Initialize 'maxIndex' to 0
+        FOR j FROM 1 TO length of studentsList - 1
+            IF studentsList[j].totalMarks > studentsList[maxIndex].totalMarks THEN
+                Update 'maxIndex' to j
+            END IF
+        END FOR
+        Add studentsList[maxIndex] to 'topHighest'
+        Remove studentsList[maxIndex] from studentsList
+    END FOR
+    
+    FOR i FROM 0 TO 4
+        Initialize 'minIndex' to 0
+        FOR j FROM 1 TO length of studentsList - 1
+            IF studentsList[j].totalMarks < studentsList[minIndex].totalMarks THEN
+                Update 'minIndex' to j
+            END IF
+        END FOR
+        Add studentsList[minIndex] to 'topLowest'
+        Remove studentsList[minIndex] from studentsList
+    END FOR
+    
+    RETURN 'topHighest' and 'topLowest'
+END
